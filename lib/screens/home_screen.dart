@@ -5,6 +5,18 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Column(
+        children: [
+          Text('1'),
+          Row(
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+              IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
