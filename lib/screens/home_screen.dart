@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           CounterProvider(
             counter: _number,
-            child: Text(CounterProvider.of(context)!.counter.toString()),
+            child: CounterDisplay(),
           ),
           SizedBox(height: 14),
           Row(
@@ -43,5 +43,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+}
+
+
+class CounterDisplay extends StatelessWidget {
+  const CounterDisplay({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(CounterProvider.of(context)!.counter.toString());
   }
 }
