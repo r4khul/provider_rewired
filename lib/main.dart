@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider_rewired/screens/home_screen.dart';
-import 'package:provider_rewired/screens/home_screen_change_notifier.dart';
-import 'package:provider_rewired/screens/login_screen.dart';
-import 'package:provider_rewired/value_notifier/value_notifier_sample.dart';
-
+import 'package:provider/provider.dart';
+import 'package:provider_rewired/change_notifier_provider/change_notifier_provider_screen.dart';
+import 'package:provider_rewired/change_notifier_provider/counter_provider.dart';
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(create: (_)=>CounterProvider())
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginScreen());
+    return MaterialApp(home: ChangeNotifierProviderScreen());
   }
 }

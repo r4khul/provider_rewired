@@ -45,15 +45,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               ValueListenableBuilder(
                 valueListenable: _loading,
-                builder: (context, value, child) => FloatingActionButton(
-                  onPressed: value
-                      ? null
-                      : () async {
-                          await _controller.login(_loading);
-                        },
-                  child: value
-                      ? Center(child: CircularProgressIndicator())
-                      : Text("Login"),
+                builder: (context, value, child) => Column(
+                  children: [
+                    FloatingActionButton(
+                      onPressed: value
+                          ? null
+                          : () async {
+                              await _controller.login(_loading);
+                            },
+                      child: value
+                          ? Center(child: CircularProgressIndicator())
+                          : Text("Login"),
+                    ),
+                  ],
                 ),
               ),
             ],

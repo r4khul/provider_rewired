@@ -15,4 +15,15 @@ class AuthController extends ChangeNotifier {
     _isLoggedIn = true;
     notifyListeners();
   }
+
+  Future<void> logout(ValueNotifier<bool> loading) async {
+    loading.value = true;
+    notifyListeners();
+
+    await Future.delayed(Duration(seconds: 1), () {});
+
+    loading.value = false;
+    _isLoggedIn = false;
+    notifyListeners();
+  }
 }
